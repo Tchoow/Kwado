@@ -47,6 +47,7 @@ setInterval(function(){
     
     
     
+    
     xp += ((mouseX - xp)/12);
 
     yp += ((mouseY - yp)/12);
@@ -55,7 +56,6 @@ setInterval(function(){
 
     droneTracker.style.top  = yp     + "px";
     
-
 
     //droneTracker.style.transform = `rotate(${rotate}deg)`;
 
@@ -71,7 +71,9 @@ setInterval(function(){
     //console.log(rotate%90)
 
 
-    rotate = Math.abs(mouseX - dleft) - Math.abs(mouseY - dtop);
+    //rotate = Math.abs(mouseX - dleft) - Math.abs(mouseY - dtop);
+
+    rotate = Math.atan2(mouseY - dtop, mouseX - dleft) * 180 / Math.PI;
 
     console.log(rotate);
 
@@ -80,12 +82,12 @@ setInterval(function(){
     {
         if (mouseY < yp)
         {
-            droneTracker.style.transform = `rotate(45deg)`;
+            droneTracker.style.transform = `rotate(${rotate+90}deg)`;
             console.log('↗️');
         }
         else
         {
-            droneTracker.style.transform = `rotate(135deg)`;
+            droneTracker.style.transform = `rotate(${rotate+90}deg)`;
             console.log("↘️")
         }
         
@@ -94,12 +96,12 @@ setInterval(function(){
     {
         if (mouseY < yp)
         {
-            droneTracker.style.transform = `rotate(-45deg)`;
+            droneTracker.style.transform = `rotate(${rotate+90}deg)`;
             console.log('↖️');
         }
         else
         {
-            droneTracker.style.transform = `rotate(-135deg)`;
+            droneTracker.style.transform = `rotate(${rotate+90}deg)`;
             console.log("↙️")
         }
     }
