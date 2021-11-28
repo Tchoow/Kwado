@@ -30,24 +30,22 @@ document.addEventListener('mousemove', e => {
 
 setInterval(function(){
 
-    /*
     if (xp < mouseX - 90 || xp > mouseX + 90)
     {
-        xp += ((mouseX - xp)/8);
+        xp += ((mouseX - xp)/20);
         droneTracker.style.left = xp     + "px";
     }
 
     if (yp < mouseY - 90 || yp > mouseY + 90)
     {
-        yp += ((mouseY - yp)/8);
+        yp += ((mouseY - yp)/20);
         droneTracker.style.top  = yp     + "px";
     }
-    */
     
     
     
     
-    
+    /*
     xp += ((mouseX - xp)/12);
 
     yp += ((mouseY - yp)/12);
@@ -55,6 +53,7 @@ setInterval(function(){
     droneTracker.style.left = xp     + "px";
 
     droneTracker.style.top  = yp     + "px";
+    */
     
 
     //droneTracker.style.transform = `rotate(${rotate}deg)`;
